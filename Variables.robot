@@ -42,7 +42,7 @@ ${ENABLED_OPTION}       xpath=//div[contains(@class,'oxd-select-option')]//span[
 
 ${NEW_USERNAME_FIELD}   xpath=//label[normalize-space()='Username']/following::input[1]
 
-${NEW_PASSWORD_FIELD}   xpath=//label[normalize-space()='Password']/following::input[1]
+${NEW_PASSWORD_FIELD}   xpath=//label[normalize-space()='Password']/following::input[1]  
 
 ${CONFIRM_PASSWORD_FIELD}    xpath=//label[normalize-space()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
