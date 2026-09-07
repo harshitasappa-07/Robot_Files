@@ -1,375 +1,1838 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20260826 12:10:20.561" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20260907 13:26:06.591" rpa="false" schemaversion="4">
 <suite id="s1" name="Robot Files" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files">
-<suite id="s1-s1" name="Results" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results">
-<suite id="s1-s1-s1" name="Saucedemo Automation" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results\Saucedemo_Automation">
-<suite id="s1-s1-s1-s1" name="Resources" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results\Saucedemo_Automation\resources">
-<suite id="s1-s1-s1-s1-s1" name="Test cases" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results\Saucedemo_Automation\resources\Test cases">
-<suite id="s1-s1-s1-s1-s1-s1" name="Saucedemo test" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results\Saucedemo_Automation\resources\Test cases\Saucedemo_test.robot">
-<kw name="Open Application" library="common_keywords" type="SETUP">
+<suite id="s1-s1" name="DEMOQA AUTOMATION" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\DEMOQA_AUTOMATION">
+<suite id="s1-s1-s1" name="Variables" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\DEMOQA_AUTOMATION\Variables">
+<suite id="s1-s1-s1-s1" name="Testcases demoqa" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\DEMOQA_AUTOMATION\Variables\Testcases_demoqa">
+<suite id="s1-s1-s1-s1-s1" name="Demoqa Testcases" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\DEMOQA_AUTOMATION\Variables\Testcases_demoqa\demoqa_testcases.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Scenario 01: Verify Text Box Form Submission" line="31">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
+<arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20260826 12:10:21.354" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
-<status status="PASS" starttime="20260826 12:10:21.353" endtime="20260826 12:10:28.119"/>
+<msg timestamp="20260907 13:26:07.430" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<msg timestamp="20260907 13:26:25.506" level="WARN">There was an error managing chromedriver (error decoding response body for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+<status status="PASS" starttime="20260907 13:26:07.427" endtime="20260907 13:26:32.268"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20260826 12:10:28.123" endtime="20260826 12:10:28.673"/>
+<status status="PASS" starttime="20260907 13:26:32.281" endtime="20260907 13:26:35.986"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<arg>10sec</arg>
+<arg>${TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20260826 12:10:28.674" endtime="20260826 12:10:28.737"/>
+<status status="PASS" starttime="20260907 13:26:35.986" endtime="20260907 13:26:36.004"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:21.352" endtime="20260826 12:10:28.738"/>
+<status status="PASS" starttime="20260907 13:26:07.426" endtime="20260907 13:26:36.006"/>
 </kw>
-<test id="s1-s1-s1-s1-s1-s1-t1" name="Open SauceDemo" line="19">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Swag Labs</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20260826 12:10:29.218" level="INFO">Page title is 'Swag Labs'.</msg>
-<status status="PASS" starttime="20260826 12:10:29.176" endtime="20260826 12:10:29.218"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:28.738" endtime="20260826 12:10:29.229"/>
-</test>
-<test id="s1-s1-s1-s1-s1-s1-t2" name="Valid Login" line="23">
-<kw name="Login To Application" library="login_keywords">
-<arg>${VALID_USERNAME}</arg>
-<arg>${VALID_PASSWORD}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${USERNAME_INPUT}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:29.502" level="INFO">Typing text 'standard_user' into text field 'xpath=//input[@id='user-name']'.</msg>
-<status status="PASS" starttime="20260826 12:10:29.488" endtime="20260826 12:10:31.426"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:31.516" level="INFO">Typing text 'secret_sauce' into text field 'xpath=//input[@id='password']'.</msg>
-<status status="PASS" starttime="20260826 12:10:31.475" endtime="20260826 12:10:33.190"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${LOGIN_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:33.258" level="INFO">Clicking element 'xpath=//input[@id='login-button']'.</msg>
-<status status="PASS" starttime="20260826 12:10:33.195" endtime="20260826 12:10:35.910"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:29.483" endtime="20260826 12:10:35.910"/>
-</kw>
-<kw name="Verify Login Successful" library="login_keywords">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>Products</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20260826 12:10:35.931" endtime="20260826 12:10:35.983"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:35.920" endtime="20260826 12:10:35.985"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:29.301" endtime="20260826 12:10:35.988"/>
-</test>
-<test id="s1-s1-s1-s1-s1-s1-t3" name="Verify Products" line="28">
-<kw name="Verify Products Page" library="products_keyword">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${PRODUCTS_TITLE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20260826 12:10:37.657" endtime="20260826 12:10:40.009"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:37.638" endtime="20260826 12:10:40.012"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:37.313" endtime="20260826 12:10:40.026"/>
-</test>
-<test id="s1-s1-s1-s1-s1-s1-t4" name="Add One Product" line="32">
-<kw name="Add Product To Cart" library="products_keyword">
-<arg>${PRODUCT_1}</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${button}</var>
-<arg>xpath=//div[normalize-space()='${PRODUCT_NAME}']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20260826 12:10:41.334" level="INFO">${button} = xpath=//div[normalize-space()='Sauce Labs Backpack']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</msg>
-<status status="PASS" starttime="20260826 12:10:41.326" endtime="20260826 12:10:41.337"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:41.343" level="INFO">Clicking element 'xpath=//div[normalize-space()='Sauce Labs Backpack']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]'.</msg>
-<status status="PASS" starttime="20260826 12:10:41.337" endtime="20260826 12:10:47.243"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:41.295" endtime="20260826 12:10:47.243"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:41.060" endtime="20260826 12:10:47.248"/>
-</test>
-<test id="s1-s1-s1-s1-s1-s1-t5" name="Add Multiple Products" line="36">
-<kw name="Add Product To Cart" library="products_keyword">
-<arg>${PRODUCT_2}</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${button}</var>
-<arg>xpath=//div[normalize-space()='${PRODUCT_NAME}']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20260826 12:10:47.352" level="INFO">${button} = xpath=//div[normalize-space()='Sauce Labs Bike Light']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</msg>
-<status status="PASS" starttime="20260826 12:10:47.348" endtime="20260826 12:10:47.353"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:47.361" level="INFO">Clicking element 'xpath=//div[normalize-space()='Sauce Labs Bike Light']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]'.</msg>
-<status status="PASS" starttime="20260826 12:10:47.354" endtime="20260826 12:10:47.451"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:47.338" endtime="20260826 12:10:47.453"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:47.296" endtime="20260826 12:10:47.454"/>
-</test>
-<test id="s1-s1-s1-s1-s1-s1-t6" name="Remove Product" line="40">
-<kw name="Open Cart" library="products_keyword">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${CART_ICON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:47.525" level="INFO">Clicking element 'xpath=//a[contains(@class,'shopping_cart_link')]'.</msg>
-<status status="PASS" starttime="20260826 12:10:47.523" endtime="20260826 12:10:47.873"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:47.519" endtime="20260826 12:10:47.873"/>
-</kw>
-<kw name="Verify Product In Cart" library="cart_keywords">
-<arg>${PRODUCT_1}</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${product}</var>
-<arg>xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='${product_name}']</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20260826 12:10:47.875" level="INFO">${product} = xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='Sauce Labs Backpack']</msg>
-<status status="PASS" starttime="20260826 12:10:47.875" endtime="20260826 12:10:47.877"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/text-box</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:26:36.018" level="INFO">Opening url 'https://demoqa.com/text-box'</msg>
+<status status="PASS" starttime="20260907 13:26:36.017" endtime="20260907 13:26:39.170"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${product}</arg>
+<arg>${TEXT_BOX_INPUT_FULL_NAME}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20260826 12:10:47.877" endtime="20260826 12:10:47.946"/>
+<status status="PASS" starttime="20260907 13:26:39.216" endtime="20260907 13:26:41.371"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TEXT_BOX_INPUT_FULL_NAME}</arg>
+<arg>John Doe</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:26:41.378" level="INFO">Typing text 'John Doe' into text field 'xpath=//input[@id='userName']'.</msg>
+<status status="PASS" starttime="20260907 13:26:41.377" endtime="20260907 13:26:41.777"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TEXT_BOX_INPUT_EMAIL}</arg>
+<arg>john.doe@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:26:41.779" level="INFO">Typing text 'john.doe@example.com' into text field 'xpath=//input[@id='userEmail']'.</msg>
+<status status="PASS" starttime="20260907 13:26:41.777" endtime="20260907 13:26:42.501"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TEXT_BOX_TEXT_AREA_CURRENT_ADDRESS}</arg>
+<arg>123 Main Street</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:26:42.504" level="INFO">Typing text '123 Main Street' into text field 'xpath=//textarea[@id='currentAddress']'.</msg>
+<status status="PASS" starttime="20260907 13:26:42.502" endtime="20260907 13:26:42.716"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${TEXT_BOX_TEXT_AREA_PERMANENT_ADDRESS}</arg>
+<arg>456 Second Street</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:26:42.719" level="INFO">Typing text '456 Second Street' into text field 'xpath=//textarea[@id='permanentAddress']'.</msg>
+<status status="PASS" starttime="20260907 13:26:42.718" endtime="20260907 13:26:42.915"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${TEXT_BOX_BUTTON_SUBMIT}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20260907 13:26:42.917" level="INFO">Clicking button 'xpath=//button[@id='submit']'.</msg>
+<msg timestamp="20260907 13:26:44.260" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-94.png"&gt;&lt;img src="selenium-screenshot-94.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260907 13:26:44.266" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (871, 614)
+  (Session info: chrome=152.0.7977.82); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff79322e035+5745]
+	chromedriver!(No symbol) [0x7ff793156a90]
+	chromedriver!(No symbol) [0x7ff792f85d7d]
+	chromedriver!(No symbol) [0x7ff792fe87e3]
+	chromedriver!(No symbol) [0x7ff792fe6413]
+	chromedriver!(No symbol) [0x7ff792fe3767]
+	chromedriver!(No symbol) [0x7ff792fe2630]
+	chromedriver!(No symbol) [0x7ff792fd4d88]
+	chromedriver!(No symbol) [0x7ff7930095ca]
+	chromedriver!(No symbol) [0x7ff792fd4606]
+	chromedriver!(No symbol) [0x7ff79302e502]
+	chromedriver!(No symbol) [0x7ff792fd2e4b]
+	chromedriver!(No symbol) [0x7ff792fd3d83]
+	chromedriver!GetHandleVerifier [0x7ff793642f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff793670132+447842]
+	chromedriver!GetHandleVerifier [0x7ff793663e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff793323f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff79316419c]
+	chromedriver!(No symbol) [0x7ff79315fdd4]
+	chromedriver!(No symbol) [0x7ff79315ff64]
+	chromedriver!(No symbol) [0x7ff79314a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ff82f7eccb7+17]
+	ntdll!RtlUserThreadStart [0x7ff830eacaec+2c]
+</msg>
+<status status="FAIL" starttime="20260907 13:26:42.916" endtime="20260907 13:26:44.735"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TEXT_BOX_OUTPUT_NAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20260907 13:26:44.740" endtime="20260907 13:26:44.742"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${TEXT_BOX_OUTPUT_NAME}</arg>
+<arg>John Doe</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20260907 13:26:44.768" endtime="20260907 13:26:44.779"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${TEXT_BOX_OUTPUT_EMAIL}</arg>
+<arg>john.doe@example.com</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20260907 13:26:44.783" endtime="20260907 13:26:44.784"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:26:44.830" endtime="20260907 13:26:51.277"/>
+</kw>
+<status status="PASS" starttime="20260907 13:26:44.815" endtime="20260907 13:26:51.277"/>
+</kw>
+<doc>Fill in all fields on the Text Box page and submit using native click.</doc>
+<status status="FAIL" starttime="20260907 13:26:07.413" endtime="20260907 13:26:51.278">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (871, 614)
+  (Session info: chrome=152.0.7977.82); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff79322e035+5745]
+	chromedriver!(No symbol) [0x7ff793156a90]
+	chromedriver!(No symbol) [0x7ff792f85d7d]
+	chromedriver!(No symbol) [0x7ff792fe87e3]
+	chromedriver!(No symbol) [0x7ff792fe6413]
+	chromedriver!(No symbol) [0x7ff792fe3767]
+	chromedriver!(No symbol) [0x7ff792fe2630]
+	chromedriver!(No symbol) [0x7ff792fd4d88]
+	chromedriver!(No symbol) [0x7ff7930095ca]
+	chromedriver!(No symbol) [0x7ff792fd4606]
+	chromedriver!(No symbol) [0x7ff79302e502]
+	chromedriver!(No symbol) [0x7ff792fd2e4b]
+	chromedriver!(No symbol) [0x7ff792fd3d83]
+	chromedriver!GetHandleVerifier [0x7ff793642f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff793670132+447842]
+	chromedriver!GetHandleVerifier [0x7ff793663e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff793323f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff79316419c]
+	chromedriver!(No symbol) [0x7ff79315fdd4]
+	chromedriver!(No symbol) [0x7ff79315ff64]
+	chromedriver!(No symbol) [0x7ff79314a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ff82f7eccb7+17]
+	ntdll!RtlUserThreadStart [0x7ff830eacaec+2c]
+</status>
+</test>
+<test id="s1-s1-s1-s1-s1-t2" name="Scenario 02: Verify Tree Expansion And Check Box Selection" line="44">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:26:51.610" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:26:51.603" endtime="20260907 13:27:04.404"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:27:04.412" endtime="20260907 13:27:04.494"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:27:04.494" endtime="20260907 13:27:04.501"/>
+</kw>
+<status status="PASS" starttime="20260907 13:26:51.602" endtime="20260907 13:27:04.502"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/checkbox</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:27:04.515" level="INFO">Opening url 'https://demoqa.com/checkbox'</msg>
+<status status="PASS" starttime="20260907 13:27:04.513" endtime="20260907 13:27:05.408"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${CHECK_BOX_BUTTON_TOGGLE_HOME}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:27:05.473" endtime="20260907 13:27:07.106"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:27:07.107" endtime="20260907 13:27:07.441"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:27:07.441" endtime="20260907 13:27:07.474"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:07.477" level="INFO">Clicking element 'xpath=//span[@title='Home']/preceding-sibling::span[contains(@class, 'rc-tree-switcher')]'.</msg>
+<status status="PASS" starttime="20260907 13:27:07.476" endtime="20260907 13:27:07.584"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:05.447" endtime="20260907 13:27:07.585"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${CHECK_BOX_CHECKBOX_HOME}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20260907 13:27:09.096" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-95.png"&gt;&lt;img src="selenium-screenshot-95.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260907 13:27:09.105" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression ////span[@role='checkbox' and contains(@class, 'rc-tree-checkbox')] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '////span[@role='checkbox' and contains(@class, 'rc-tree-checkbox')]' is not a valid XPath expression.
+  (Session info: chrome=152.0.7977.82); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff79322e035+5745]
+	chromedriver!(No symbol) [0x7ff793156a90]
+	chromedriver!(No symbol) [0x7ff792f85d7d]
+	chromedriver!(No symbol) [0x7ff792f8ddd1]
+	chromedriver!(No symbol) [0x7ff792f90d55]
+	chromedriver!(No symbol) [0x7ff792f90e1f]
+	chromedriver!(No symbol) [0x7ff792fe021b]
+	chromedriver!(No symbol) [0x7ff792fe0cfc]
+	chromedriver!(No symbol) [0x7ff793031927]
+	chromedriver!(No symbol) [0x7ff79302e502]
+	chromedriver!(No symbol) [0x7ff792fd2e4b]
+	chromedriver!(No symbol) [0x7ff792fd3d83]
+	chromedriver!GetHandleVerifier [0x7ff793642f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff793670132+447842]
+	chromedriver!GetHandleVerifier [0x7ff793663e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff793323f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff79316419c]
+	chromedriver!(No symbol) [0x7ff79315fdd4]
+	chromedriver!(No symbol) [0x7ff79315ff64]
+	chromedriver!(No symbol) [0x7ff79314a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ff82f7eccb7+17]
+	ntdll!RtlUserThreadStart [0x7ff830eacaec+2c]
+</msg>
+<status status="FAIL" starttime="20260907 13:27:07.588" endtime="20260907 13:27:12.627"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" starttime="20260907 13:27:12.645" endtime="20260907 13:27:12.646"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20260907 13:27:12.646" endtime="20260907 13:27:12.647"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20260907 13:27:12.650" endtime="20260907 13:27:12.650"/>
+</kw>
+<status status="FAIL" starttime="20260907 13:27:07.586" endtime="20260907 13:27:12.651"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CHECK_BOX_TEXT_RESULT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20260907 13:27:12.660" endtime="20260907 13:27:12.667"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${CHECK_BOX_TEXT_RESULT}</arg>
+<arg>home</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20260907 13:27:12.694" endtime="20260907 13:27:12.695"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:27:12.705" endtime="20260907 13:27:18.422"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:12.703" endtime="20260907 13:27:18.424"/>
+</kw>
+<doc>Expand the Home node and select the Home checkbox using native clicks.</doc>
+<status status="FAIL" starttime="20260907 13:26:51.571" endtime="20260907 13:27:18.424">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression ////span[@role='checkbox' and contains(@class, 'rc-tree-checkbox')] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '////span[@role='checkbox' and contains(@class, 'rc-tree-checkbox')]' is not a valid XPath expression.
+  (Session info: chrome=152.0.7977.82); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff79322e035+5745]
+	chromedriver!(No symbol) [0x7ff793156a90]
+	chromedriver!(No symbol) [0x7ff792f85d7d]
+	chromedriver!(No symbol) [0x7ff792f8ddd1]
+	chromedriver!(No symbol) [0x7ff792f90d55]
+	chromedriver!(No symbol) [0x7ff792f90e1f]
+	chromedriver!(No symbol) [0x7ff792fe021b]
+	chromedriver!(No symbol) [0x7ff792fe0cfc]
+	chromedriver!(No symbol) [0x7ff793031927]
+	chromedriver!(No symbol) [0x7ff79302e502]
+	chromedriver!(No symbol) [0x7ff792fd2e4b]
+	chromedriver!(No symbol) [0x7ff792fd3d83]
+	chromedriver!GetHandleVerifier [0x7ff793642f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff793670132+447842]
+	chromedriver!GetHandleVerifier [0x7ff793663e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff793323f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff79316419c]
+	chromedriver!(No symbol) [0x7ff79315fdd4]
+	chromedriver!(No symbol) [0x7ff79315ff64]
+	chromedriver!(No symbol) [0x7ff79314a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ff82f7eccb7+17]
+	ntdll!RtlUserThreadStart [0x7ff830eacaec+2c]
+</status>
+</test>
+<test id="s1-s1-s1-s1-s1-t3" name="Scenario 03: Verify Radio Button Selection" line="52">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:27:18.463" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:27:18.460" endtime="20260907 13:27:28.014"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:27:28.015" endtime="20260907 13:27:28.134"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:27:28.134" endtime="20260907 13:27:28.148"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:18.459" endtime="20260907 13:27:28.149"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/radio-button</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:27:28.163" level="INFO">Opening url 'https://demoqa.com/radio-button'</msg>
+<status status="PASS" starttime="20260907 13:27:28.162" endtime="20260907 13:27:28.866"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${RADIO_BUTTON_LABEL_YES}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:27:28.976" endtime="20260907 13:27:29.119"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:27:29.119" endtime="20260907 13:27:33.217"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:27:33.217" endtime="20260907 13:27:33.236"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:33.239" level="INFO">Clicking element 'xpath=//label[@for='yesRadio']'.</msg>
+<status status="PASS" starttime="20260907 13:27:33.237" endtime="20260907 13:27:33.397"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:28.901" endtime="20260907 13:27:33.397"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${RADIO_BUTTON_TEXT_SUCCESS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:27:33.399" endtime="20260907 13:27:33.428"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${RADIO_BUTTON_TEXT_SUCCESS}</arg>
+<arg>Yes</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20260907 13:27:33.437" level="INFO">Verifying element 'xpath=//span[@class='text-success']' contains exact text 'Yes'.</msg>
+<status status="PASS" starttime="20260907 13:27:33.429" endtime="20260907 13:27:33.459"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:27:33.461" endtime="20260907 13:27:37.518"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:33.460" endtime="20260907 13:27:37.518"/>
+</kw>
+<doc>Select the Yes radio option and verify status message.</doc>
+<status status="PASS" starttime="20260907 13:27:18.446" endtime="20260907 13:27:37.519"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t4" name="Scenario 04: Verify Web Table Record Creation" line="59">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:27:37.561" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:27:37.561" endtime="20260907 13:27:44.370"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:27:44.371" endtime="20260907 13:27:44.456"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:27:44.457" endtime="20260907 13:27:44.512"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:37.560" endtime="20260907 13:27:44.512"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/webtables</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:27:44.522" level="INFO">Opening url 'https://demoqa.com/webtables'</msg>
+<status status="PASS" starttime="20260907 13:27:44.521" endtime="20260907 13:27:45.290"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${WEB_TABLE_BUTTON_ADD}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:27:45.294" endtime="20260907 13:27:45.500"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:27:45.500" endtime="20260907 13:27:45.924"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:27:45.924" endtime="20260907 13:27:45.955"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:45.957" level="INFO">Clicking element 'xpath=//button[@id='addNewRecordButton']'.</msg>
+<status status="PASS" starttime="20260907 13:27:45.956" endtime="20260907 13:27:46.058"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:45.291" endtime="20260907 13:27:46.058"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${WEB_TABLE_INPUT_FIRST_NAME}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:27:46.061" endtime="20260907 13:27:47.277"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WEB_TABLE_INPUT_FIRST_NAME}</arg>
+<arg>Bruce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:47.283" level="INFO">Typing text 'Bruce' into text field 'xpath=//input[@id='firstName']'.</msg>
+<status status="PASS" starttime="20260907 13:27:47.280" endtime="20260907 13:27:47.543"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WEB_TABLE_INPUT_LAST_NAME}</arg>
+<arg>Wayne</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:47.545" level="INFO">Typing text 'Wayne' into text field 'xpath=//input[@id='lastName']'.</msg>
+<status status="PASS" starttime="20260907 13:27:47.544" endtime="20260907 13:27:47.729"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WEB_TABLE_INPUT_EMAIL}</arg>
+<arg>bruce@waynecorp.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:47.733" level="INFO">Typing text 'bruce@waynecorp.com' into text field 'xpath=//input[@id='userEmail']'.</msg>
+<status status="PASS" starttime="20260907 13:27:47.732" endtime="20260907 13:27:47.998"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WEB_TABLE_INPUT_AGE}</arg>
+<arg>35</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:48.003" level="INFO">Typing text '35' into text field 'xpath=//input[@id='age']'.</msg>
+<status status="PASS" starttime="20260907 13:27:48.000" endtime="20260907 13:27:48.340"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WEB_TABLE_INPUT_SALARY}</arg>
+<arg>100000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:48.350" level="INFO">Typing text '100000' into text field 'xpath=//input[@id='salary']'.</msg>
+<status status="PASS" starttime="20260907 13:27:48.346" endtime="20260907 13:27:48.574"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WEB_TABLE_INPUT_DEPARTMENT}</arg>
+<arg>Management</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:48.584" level="INFO">Typing text 'Management' into text field 'xpath=//input[@id='department']'.</msg>
+<status status="PASS" starttime="20260907 13:27:48.582" endtime="20260907 13:27:48.792"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${WEB_TABLE_BUTTON_SUBMIT}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:27:48.794" endtime="20260907 13:27:48.833"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:27:48.834" endtime="20260907 13:27:49.128"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:27:49.128" endtime="20260907 13:27:49.149"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:49.151" level="INFO">Clicking element 'xpath=//button[@id='submit']'.</msg>
+<status status="PASS" starttime="20260907 13:27:49.149" endtime="20260907 13:27:49.289"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:48.793" endtime="20260907 13:27:49.289"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${WEB_TABLE_INPUT_SEARCH}</arg>
+<arg>bruce@waynecorp.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:27:49.290" level="INFO">Typing text 'bruce@waynecorp.com' into text field 'xpath=//input[@id='searchBox']'.</msg>
+<status status="PASS" starttime="20260907 13:27:49.290" endtime="20260907 13:27:49.578"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Bruce</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20260907 13:27:49.626" level="INFO">Current page contains text 'Bruce'.</msg>
+<status status="PASS" starttime="20260907 13:27:49.580" endtime="20260907 13:27:49.627"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:27:49.634" endtime="20260907 13:27:52.521"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:49.632" endtime="20260907 13:27:52.521"/>
+</kw>
+<doc>Add a new record via the modal and verify it is visible in the table.</doc>
+<status status="PASS" starttime="20260907 13:27:37.552" endtime="20260907 13:27:52.521"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t5" name="Scenario 05: Verify Mouse Click Actions" line="74">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:27:52.574" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:27:52.573" endtime="20260907 13:27:56.110"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:27:56.110" endtime="20260907 13:28:00.095"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:28:00.100" endtime="20260907 13:28:00.112"/>
+</kw>
+<status status="PASS" starttime="20260907 13:27:52.572" endtime="20260907 13:28:00.112"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/buttons</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:28:00.115" level="INFO">Opening url 'https://demoqa.com/buttons'</msg>
+<status status="PASS" starttime="20260907 13:28:00.114" endtime="20260907 13:28:00.782"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BUTTONS_BUTTON_DOUBLE_CLICK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:28:00.823" endtime="20260907 13:28:01.177"/>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<arg>${BUTTONS_BUTTON_DOUBLE_CLICK}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:01.180" level="INFO">Double clicking element 'xpath=//button[@id='doubleClickBtn']'.</msg>
+<status status="PASS" starttime="20260907 13:28:01.177" endtime="20260907 13:28:01.620"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${BUTTONS_MESSAGE_DOUBLE_CLICK}</arg>
+<arg>You have done a double click</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260907 13:28:02.433" level="INFO">Element 'xpath=//p[@id='doubleClickMessage']' contains text 'You have done a double click'.</msg>
+<status status="PASS" starttime="20260907 13:28:01.632" endtime="20260907 13:28:02.434"/>
+</kw>
+<kw name="Open Context Menu" library="SeleniumLibrary">
+<arg>${BUTTONS_BUTTON_RIGHT_CLICK}</arg>
+<doc>Opens the context menu on the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20260907 13:28:02.438" endtime="20260907 13:28:02.769"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${BUTTONS_MESSAGE_RIGHT_CLICK}</arg>
+<arg>You have done a right click</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260907 13:28:02.824" level="INFO">Element 'xpath=//p[@id='rightClickMessage']' contains text 'You have done a right click'.</msg>
+<status status="PASS" starttime="20260907 13:28:02.783" endtime="20260907 13:28:02.825"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${BUTTONS_BUTTON_DYNAMIC_CLICK}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:28:02.830" endtime="20260907 13:28:02.843"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:28:02.843" endtime="20260907 13:28:03.131"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:28:03.131" endtime="20260907 13:28:03.145"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:03.146" level="INFO">Clicking element 'xpath=//button[text()='Click Me']'.</msg>
+<status status="PASS" starttime="20260907 13:28:03.145" endtime="20260907 13:28:03.224"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:02.826" endtime="20260907 13:28:03.224"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${BUTTONS_MESSAGE_DYNAMIC_CLICK}</arg>
+<arg>You have done a dynamic click</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260907 13:28:03.242" level="INFO">Element 'xpath=//p[@id='dynamicClickMessage']' contains text 'You have done a dynamic click'.</msg>
+<status status="PASS" starttime="20260907 13:28:03.225" endtime="20260907 13:28:03.243"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:28:03.248" endtime="20260907 13:28:06.063"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:03.246" endtime="20260907 13:28:06.064"/>
+</kw>
+<doc>Perform double-click, context-click (right-click), and native single click.</doc>
+<status status="PASS" starttime="20260907 13:27:52.539" endtime="20260907 13:28:06.065"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t6" name="Scenario 06: Verify Link Status Code Response" line="85">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:28:06.094" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:28:06.094" endtime="20260907 13:28:09.258"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:28:09.259" endtime="20260907 13:28:13.093"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:28:13.095" endtime="20260907 13:28:13.104"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:06.093" endtime="20260907 13:28:13.105"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/links</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:28:13.106" level="INFO">Opening url 'https://demoqa.com/links'</msg>
+<status status="PASS" starttime="20260907 13:28:13.105" endtime="20260907 13:28:13.810"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${LINKS_LINK_CREATED}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:28:13.811" endtime="20260907 13:28:13.867"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:28:13.868" endtime="20260907 13:28:19.191"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:28:19.192" endtime="20260907 13:28:19.214"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:19.216" level="INFO">Clicking element 'xpath=//a[@id='created']'.</msg>
+<status status="PASS" starttime="20260907 13:28:19.215" endtime="20260907 13:28:19.298"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:13.810" endtime="20260907 13:28:19.298"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LINKS_TEXT_RESPONSE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:28:19.298" endtime="20260907 13:28:19.564"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${LINKS_TEXT_RESPONSE}</arg>
+<arg>201</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260907 13:28:19.647" level="INFO">Element 'xpath=//p[@id='linkResponse']' contains text '201'.</msg>
+<status status="PASS" starttime="20260907 13:28:19.564" endtime="20260907 13:28:19.647"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:28:19.652" endtime="20260907 13:28:24.358"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:19.651" endtime="20260907 13:28:24.359"/>
+</kw>
+<doc>Click the Created API call link and verify 201 response text.</doc>
+<status status="PASS" starttime="20260907 13:28:06.081" endtime="20260907 13:28:24.363"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t7" name="Scenario 07: Verify Dynamic Element Visibility" line="92">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:28:24.433" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:28:24.432" endtime="20260907 13:28:32.319"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:28:32.320" endtime="20260907 13:28:32.888"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:28:32.904" endtime="20260907 13:28:32.952"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:24.429" endtime="20260907 13:28:32.953"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/dynamic-properties</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:28:32.980" level="INFO">Opening url 'https://demoqa.com/dynamic-properties'</msg>
+<status status="PASS" starttime="20260907 13:28:32.973" endtime="20260907 13:28:33.772"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${DYNAMIC_PROPERTIES_BUTTON_VISIBLE_AFTER}</arg>
+<arg>timeout=6s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:28:33.788" endtime="20260907 13:28:40.197"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${product}</arg>
+<arg>${DYNAMIC_PROPERTIES_BUTTON_VISIBLE_AFTER}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20260826 12:10:47.963" level="INFO">Element 'xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='Sauce Labs Backpack']' is displayed.</msg>
-<status status="PASS" starttime="20260826 12:10:47.946" endtime="20260826 12:10:47.963"/>
+<msg timestamp="20260907 13:28:40.242" level="INFO">Element 'xpath=//button[@id='visibleAfter']' is displayed.</msg>
+<status status="PASS" starttime="20260907 13:28:40.199" endtime="20260907 13:28:40.244"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:47.874" endtime="20260826 12:10:47.965"/>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:28:40.247" endtime="20260907 13:28:43.340"/>
 </kw>
-<kw name="Remove Product" library="cart_keywords">
-<arg>${PRODUCT_1}</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${remove}</var>
-<arg>xpath=//div[contains(@class,'cart_item')][.//div[normalize-space()='${product_name}']]//button[contains(@id,'remove')]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20260826 12:10:47.967" level="INFO">${remove} = xpath=//div[contains(@class,'cart_item')][.//div[normalize-space()='Sauce Labs Backpack']]//button[contains(@id,'remove')]</msg>
-<status status="PASS" starttime="20260826 12:10:47.966" endtime="20260826 12:10:47.968"/>
+<status status="PASS" starttime="20260907 13:28:40.246" endtime="20260907 13:28:43.341"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${remove}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20260826 12:10:47.968" endtime="20260826 12:10:48.002"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${remove}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:48.003" level="INFO">Clicking element 'xpath=//div[contains(@class,'cart_item')][.//div[normalize-space()='Sauce Labs Backpack']]//button[contains(@id,'remove')]'.</msg>
-<status status="PASS" starttime="20260826 12:10:48.002" endtime="20260826 12:10:48.135"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:47.965" endtime="20260826 12:10:48.135"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:47.471" endtime="20260826 12:10:48.136"/>
+<doc>Wait for the delayed button to become visible.</doc>
+<status status="PASS" starttime="20260907 13:28:24.390" endtime="20260907 13:28:43.342"/>
 </test>
-<test id="s1-s1-s1-s1-s1-s1-t7" name="Continue Shopping" line="46">
-<kw name="Continue Shopping" library="cart_keywords">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${CONTINUE_SHOPPING}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:48.181" level="INFO">Clicking element 'xpath=//button[@id='continue-shopping']'.</msg>
-<status status="PASS" starttime="20260826 12:10:48.179" endtime="20260826 12:10:48.355"/>
+<test id="s1-s1-s1-s1-s1-t8" name="Scenario 08: Verify Practice Form Submission Modal" line="98">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:28:43.367" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:28:43.366" endtime="20260907 13:28:51.556"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:48.176" endtime="20260826 12:10:48.355"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:28:51.556" endtime="20260907 13:28:51.684"/>
 </kw>
-<kw name="Verify Products Page" library="products_keyword">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:28:51.684" endtime="20260907 13:28:51.699"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:43.366" endtime="20260907 13:28:51.699"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/automation-practice-form</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:28:51.703" level="INFO">Opening url 'https://demoqa.com/automation-practice-form'</msg>
+<status status="PASS" starttime="20260907 13:28:51.701" endtime="20260907 13:28:52.529"/>
+</kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${PRODUCTS_TITLE}</arg>
+<arg>${PRACTICE_FORM_INPUT_FIRST_NAME}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20260826 12:10:48.358" endtime="20260826 12:10:48.407"/>
+<status status="PASS" starttime="20260907 13:28:52.676" endtime="20260907 13:28:53.646"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:48.356" endtime="20260826 12:10:48.409"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PRACTICE_FORM_INPUT_FIRST_NAME}</arg>
+<arg>Clark</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:53.649" level="INFO">Typing text 'Clark' into text field 'xpath=//input[@id='firstName']'.</msg>
+<status status="PASS" starttime="20260907 13:28:53.647" endtime="20260907 13:28:54.370"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:48.155" endtime="20260826 12:10:48.410"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PRACTICE_FORM_INPUT_LAST_NAME}</arg>
+<arg>Kent</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:54.372" level="INFO">Typing text 'Kent' into text field 'xpath=//input[@id='lastName']'.</msg>
+<status status="PASS" starttime="20260907 13:28:54.371" endtime="20260907 13:28:54.498"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PRACTICE_FORM_INPUT_EMAIL}</arg>
+<arg>clark@dailyplanet.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:54.502" level="INFO">Typing text 'clark@dailyplanet.com' into text field 'xpath=//input[@id='userEmail']'.</msg>
+<status status="PASS" starttime="20260907 13:28:54.501" endtime="20260907 13:28:54.767"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${PRACTICE_FORM_RADIO_MALE}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:28:54.779" endtime="20260907 13:28:54.894"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:28:54.895" endtime="20260907 13:28:55.201"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:28:55.202" endtime="20260907 13:28:55.221"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:55.222" level="INFO">Clicking element 'xpath=//label[@for='gender-radio-1']'.</msg>
+<status status="PASS" starttime="20260907 13:28:55.221" endtime="20260907 13:28:55.333"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:54.777" endtime="20260907 13:28:55.334"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PRACTICE_FORM_INPUT_MOBILE_NUMBER}</arg>
+<arg>9876543210</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:55.337" level="INFO">Typing text '9876543210' into text field 'xpath=//input[@id='userNumber']'.</msg>
+<status status="PASS" starttime="20260907 13:28:55.335" endtime="20260907 13:28:55.526"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${PRACTICE_FORM_CHECKBOX_SPORTS}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:28:55.528" endtime="20260907 13:28:55.546"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:28:55.546" endtime="20260907 13:28:55.858"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:28:55.858" endtime="20260907 13:28:55.873"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:28:55.874" level="INFO">Clicking element 'xpath=//label[@for='hobbies-checkbox-1']'.</msg>
+<msg timestamp="20260907 13:28:57.106" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-96.png"&gt;&lt;img src="selenium-screenshot-96.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260907 13:28:57.108" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;label title="" for="hobbies-checkbox-1" class="form-check-label"&gt;...&lt;/label&gt; is not clickable at point (458, 523). Other element would receive the click: &lt;footer&gt;...&lt;/footer&gt;
+  (Session info: chrome=152.0.7977.82); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff79322e035+5745]
+	chromedriver!(No symbol) [0x7ff793156a90]
+	chromedriver!(No symbol) [0x7ff792f85d7d]
+	chromedriver!(No symbol) [0x7ff792fe87e3]
+	chromedriver!(No symbol) [0x7ff792fe6413]
+	chromedriver!(No symbol) [0x7ff792fe3767]
+	chromedriver!(No symbol) [0x7ff792fe2630]
+	chromedriver!(No symbol) [0x7ff792fd4d88]
+	chromedriver!(No symbol) [0x7ff7930095ca]
+	chromedriver!(No symbol) [0x7ff792fd4606]
+	chromedriver!(No symbol) [0x7ff79302e502]
+	chromedriver!(No symbol) [0x7ff792fd2e4b]
+	chromedriver!(No symbol) [0x7ff792fd3d83]
+	chromedriver!GetHandleVerifier [0x7ff793642f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff793670132+447842]
+	chromedriver!GetHandleVerifier [0x7ff793663e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff793323f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff79316419c]
+	chromedriver!(No symbol) [0x7ff79315fdd4]
+	chromedriver!(No symbol) [0x7ff79315ff64]
+	chromedriver!(No symbol) [0x7ff79314a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ff82f7eccb7+17]
+	ntdll!RtlUserThreadStart [0x7ff830eacaec+2c]
+</msg>
+<status status="FAIL" starttime="20260907 13:28:55.873" endtime="20260907 13:28:57.173"/>
+</kw>
+<status status="FAIL" starttime="20260907 13:28:55.526" endtime="20260907 13:28:57.174"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PRACTICE_FORM_BUTTON_SUBMIT}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20260907 13:28:57.177" endtime="20260907 13:28:57.177"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PRACTICE_FORM_MODAL_TITLE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20260907 13:28:57.179" endtime="20260907 13:28:57.179"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${PRACTICE_FORM_MODAL_TITLE}</arg>
+<arg>Thanks for submitting the form</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20260907 13:28:57.180" endtime="20260907 13:28:57.181"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:28:57.184" endtime="20260907 13:29:00.260"/>
+</kw>
+<status status="PASS" starttime="20260907 13:28:57.183" endtime="20260907 13:29:00.260"/>
+</kw>
+<doc>Complete required fields in the student registration form and submit natively.</doc>
+<status status="FAIL" starttime="20260907 13:28:43.358" endtime="20260907 13:29:00.261">ElementClickInterceptedException: Message: element click intercepted: Element &lt;label title="" for="hobbies-checkbox-1" class="form-check-label"&gt;...&lt;/label&gt; is not clickable at point (458, 523). Other element would receive the click: &lt;footer&gt;...&lt;/footer&gt;
+  (Session info: chrome=152.0.7977.82); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff79322e035+5745]
+	chromedriver!(No symbol) [0x7ff793156a90]
+	chromedriver!(No symbol) [0x7ff792f85d7d]
+	chromedriver!(No symbol) [0x7ff792fe87e3]
+	chromedriver!(No symbol) [0x7ff792fe6413]
+	chromedriver!(No symbol) [0x7ff792fe3767]
+	chromedriver!(No symbol) [0x7ff792fe2630]
+	chromedriver!(No symbol) [0x7ff792fd4d88]
+	chromedriver!(No symbol) [0x7ff7930095ca]
+	chromedriver!(No symbol) [0x7ff792fd4606]
+	chromedriver!(No symbol) [0x7ff79302e502]
+	chromedriver!(No symbol) [0x7ff792fd2e4b]
+	chromedriver!(No symbol) [0x7ff792fd3d83]
+	chromedriver!GetHandleVerifier [0x7ff793642f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff793670132+447842]
+	chromedriver!GetHandleVerifier [0x7ff793663e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff793323f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff79316419c]
+	chromedriver!(No symbol) [0x7ff79315fdd4]
+	chromedriver!(No symbol) [0x7ff79315ff64]
+	chromedriver!(No symbol) [0x7ff79314a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ff82f7eccb7+17]
+	ntdll!RtlUserThreadStart [0x7ff830eacaec+2c]
+</status>
 </test>
-<test id="s1-s1-s1-s1-s1-s1-t8" name="Add Product For Checkout" line="51">
-<kw name="Add Product To Cart" library="products_keyword">
-<arg>${PRODUCT_1}</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${button}</var>
-<arg>xpath=//div[normalize-space()='${PRODUCT_NAME}']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20260826 12:10:48.514" level="INFO">${button} = xpath=//div[normalize-space()='Sauce Labs Backpack']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</msg>
-<status status="PASS" starttime="20260826 12:10:48.513" endtime="20260826 12:10:48.514"/>
+<test id="s1-s1-s1-s1-s1-t9" name="Scenario 09: Verify Switching To New Tab" line="112">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:29:00.345" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:29:00.344" endtime="20260907 13:29:10.833"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${button}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:48.515" level="INFO">Clicking element 'xpath=//div[normalize-space()='Sauce Labs Backpack']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]'.</msg>
-<status status="PASS" starttime="20260826 12:10:48.515" endtime="20260826 12:10:48.603"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:29:10.834" endtime="20260907 13:29:11.213"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:48.512" endtime="20260826 12:10:48.603"/>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:29:11.214" endtime="20260907 13:29:11.260"/>
 </kw>
-<kw name="Open Cart" library="products_keyword">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${CART_ICON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:48.610" level="INFO">Clicking element 'xpath=//a[contains(@class,'shopping_cart_link')]'.</msg>
-<status status="PASS" starttime="20260826 12:10:48.607" endtime="20260826 12:10:48.965"/>
+<status status="PASS" starttime="20260907 13:29:00.343" endtime="20260907 13:29:11.261"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:48.604" endtime="20260826 12:10:48.965"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/browser-windows</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:29:11.294" level="INFO">Opening url 'https://demoqa.com/browser-windows'</msg>
+<status status="PASS" starttime="20260907 13:29:11.293" endtime="20260907 13:29:12.230"/>
 </kw>
-<kw name="Verify Product In Cart" library="cart_keywords">
-<arg>${PRODUCT_1}</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${product}</var>
-<arg>xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='${product_name}']</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20260826 12:10:48.967" level="INFO">${product} = xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='Sauce Labs Backpack']</msg>
-<status status="PASS" starttime="20260826 12:10:48.966" endtime="20260826 12:10:49.146"/>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${BROWSER_WINDOWS_BUTTON_NEW_TAB}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:29:12.258" endtime="20260907 13:29:12.476"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:29:12.477" endtime="20260907 13:29:13.042"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${product}</arg>
+<arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20260826 12:10:49.147" endtime="20260826 12:10:49.194"/>
+<status status="PASS" starttime="20260907 13:29:13.042" endtime="20260907 13:29:13.765"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:29:13.767" level="INFO">Clicking element 'xpath=//button[@id='tabButton']'.</msg>
+<status status="PASS" starttime="20260907 13:29:13.766" endtime="20260907 13:29:14.134"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:12.248" endtime="20260907 13:29:14.135"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20260907 13:29:14.143" endtime="20260907 13:29:14.237"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${BROWSER_WINDOWS_TEXT_SAMPLE_HEADING}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:29:14.242" endtime="20260907 13:29:14.526"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${BROWSER_WINDOWS_TEXT_SAMPLE_HEADING}</arg>
+<arg>This is a sample page</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20260907 13:29:14.532" level="INFO">Verifying element 'xpath=//h1[@id='sampleHeading']' contains exact text 'This is a sample page'.</msg>
+<status status="PASS" starttime="20260907 13:29:14.527" endtime="20260907 13:29:14.589"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20260907 13:29:14.590" endtime="20260907 13:29:14.676"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20260907 13:29:14.714" endtime="20260907 13:29:14.931"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:29:14.937" endtime="20260907 13:29:21.904"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:14.936" endtime="20260907 13:29:21.904"/>
+</kw>
+<doc>Open a new tab from the Browser Windows page and read the sample heading.</doc>
+<status status="PASS" starttime="20260907 13:29:00.299" endtime="20260907 13:29:21.905"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t10" name="Scenario 10: Verify Simple and Confirm Alerts" line="122">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:29:21.958" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:29:21.957" endtime="20260907 13:29:31.095"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:29:31.097" endtime="20260907 13:29:31.229"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:29:31.229" endtime="20260907 13:29:31.244"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:21.957" endtime="20260907 13:29:31.244"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/alerts</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:29:31.310" level="INFO">Opening url 'https://demoqa.com/alerts'</msg>
+<status status="PASS" starttime="20260907 13:29:31.277" endtime="20260907 13:29:32.150"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${ALERTS_BUTTON_SIMPLE_ALERT}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:29:32.222" endtime="20260907 13:29:32.366"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:29:32.367" endtime="20260907 13:29:32.964"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:29:32.964" endtime="20260907 13:29:33.002"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:29:33.004" level="INFO">Clicking element 'xpath=//button[@id='alertButton']'.</msg>
+<status status="PASS" starttime="20260907 13:29:33.003" endtime="20260907 13:29:33.541"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:32.194" endtime="20260907 13:29:33.542"/>
+</kw>
+<kw name="Alert Should Be Present" library="SeleniumLibrary">
+<arg>action=ACCEPT</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<msg timestamp="20260907 13:29:33.552" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20260907 13:29:33.546" endtime="20260907 13:29:33.648"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${ALERTS_BUTTON_CONFIRM_ALERT}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:29:33.656" endtime="20260907 13:29:33.675"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:29:33.676" endtime="20260907 13:29:34.035"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:29:34.036" endtime="20260907 13:29:34.085"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:29:34.087" level="INFO">Clicking element 'xpath=//button[@id='confirmButton']'.</msg>
+<status status="PASS" starttime="20260907 13:29:34.085" endtime="20260907 13:29:34.222"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:33.649" endtime="20260907 13:29:34.222"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>action=DISMISS</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20260907 13:29:34.225" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20260907 13:29:34.224" endtime="20260907 13:29:34.243"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ALERTS_TEXT_CONFIRM_RESULT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:29:34.244" endtime="20260907 13:29:34.296"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERTS_TEXT_CONFIRM_RESULT}</arg>
+<arg>Cancel</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260907 13:29:34.347" level="INFO">Element 'xpath=//span[@id='confirmResult']' contains text 'Cancel'.</msg>
+<status status="PASS" starttime="20260907 13:29:34.297" endtime="20260907 13:29:34.348"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:29:34.358" endtime="20260907 13:29:37.396"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:34.357" endtime="20260907 13:29:37.396"/>
+</kw>
+<doc>Accept a simple alert and dismiss a confirm alert.</doc>
+<status status="PASS" starttime="20260907 13:29:21.938" endtime="20260907 13:29:37.398"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t11" name="Scenario 11: Verify Reading Content Inside IFrame" line="132">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:29:37.455" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:29:37.454" endtime="20260907 13:29:46.044"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:29:46.045" endtime="20260907 13:29:46.780"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:29:46.781" endtime="20260907 13:29:46.807"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:37.448" endtime="20260907 13:29:46.807"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/frames</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:29:46.816" level="INFO">Opening url 'https://demoqa.com/frames'</msg>
+<status status="PASS" starttime="20260907 13:29:46.816" endtime="20260907 13:29:47.515"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${FRAMES_IFRAME_1}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:29:47.674" endtime="20260907 13:29:47.856"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${FRAMES_IFRAME_1}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20260907 13:29:47.862" level="INFO">Selecting frame 'xpath=//iframe[@id='frame1']'.</msg>
+<status status="PASS" starttime="20260907 13:29:47.860" endtime="20260907 13:29:49.369"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${FRAMES_TEXT_SAMPLE_HEADING}</arg>
+<arg>This is a sample page</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20260907 13:29:49.372" level="INFO">Verifying element 'xpath=//h1[@id='sampleHeading']' contains exact text 'This is a sample page'.</msg>
+<status status="PASS" starttime="20260907 13:29:49.370" endtime="20260907 13:29:49.489"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20260907 13:29:49.490" endtime="20260907 13:29:49.526"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:29:49.529" endtime="20260907 13:29:52.567"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:49.528" endtime="20260907 13:29:52.568"/>
+</kw>
+<doc>Switch into frame1, verify text, and unselect the frame.</doc>
+<status status="PASS" starttime="20260907 13:29:37.421" endtime="20260907 13:29:52.573"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t12" name="Scenario 12: Verify Modal Dialog Window" line="140">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:29:52.671" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:29:52.670" endtime="20260907 13:29:58.101"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:29:58.102" endtime="20260907 13:30:04.094"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:30:04.095" endtime="20260907 13:30:04.244"/>
+</kw>
+<status status="PASS" starttime="20260907 13:29:52.669" endtime="20260907 13:30:04.252"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/modal-dialogs</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:30:04.283" level="INFO">Opening url 'https://demoqa.com/modal-dialogs'</msg>
+<status status="PASS" starttime="20260907 13:30:04.276" endtime="20260907 13:30:05.222"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${MODAL_DIALOGS_BUTTON_SMALL_MODAL}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:30:05.257" endtime="20260907 13:30:05.761"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:30:05.761" endtime="20260907 13:30:12.457"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:30:12.458" endtime="20260907 13:30:13.829"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:30:13.831" level="INFO">Clicking element 'xpath=//button[@id='showSmallModal']'.</msg>
+<status status="PASS" starttime="20260907 13:30:13.830" endtime="20260907 13:30:14.825"/>
+</kw>
+<status status="PASS" starttime="20260907 13:30:05.239" endtime="20260907 13:30:14.826"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MODAL_DIALOGS_TEXT_BODY}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:30:14.831" endtime="20260907 13:30:14.900"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${MODAL_DIALOGS_TEXT_BODY}</arg>
+<arg>This is a small modal</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260907 13:30:14.966" level="INFO">Element 'xpath=//div[contains(@class, 'modal-body')]' contains text 'This is a small modal'.</msg>
+<status status="PASS" starttime="20260907 13:30:14.901" endtime="20260907 13:30:14.966"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${MODAL_DIALOGS_BUTTON_CLOSE_SMALL}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:30:14.972" endtime="20260907 13:30:15.031"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:30:15.031" endtime="20260907 13:30:19.371"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:30:19.372" endtime="20260907 13:30:19.390"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:30:19.391" level="INFO">Clicking element 'xpath=//button[@id='closeSmallModal']'.</msg>
+<status status="PASS" starttime="20260907 13:30:19.390" endtime="20260907 13:30:19.533"/>
+</kw>
+<status status="PASS" starttime="20260907 13:30:14.969" endtime="20260907 13:30:19.534"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:30:19.535" endtime="20260907 13:30:23.179"/>
+</kw>
+<status status="PASS" starttime="20260907 13:30:19.534" endtime="20260907 13:30:23.180"/>
+</kw>
+<doc>Open small modal, read body text, and close it natively.</doc>
+<status status="PASS" starttime="20260907 13:29:52.637" endtime="20260907 13:30:23.180"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t13" name="Scenario 13: Verify Accordian Collapse and Expansion" line="148">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:30:23.226" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:30:23.224" endtime="20260907 13:30:28.062"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:30:28.063" endtime="20260907 13:30:34.185"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:30:34.187" endtime="20260907 13:30:34.190"/>
+</kw>
+<status status="PASS" starttime="20260907 13:30:23.223" endtime="20260907 13:30:34.192"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/accordian</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:30:34.195" level="INFO">Opening url 'https://demoqa.com/accordian'</msg>
+<status status="PASS" starttime="20260907 13:30:34.194" endtime="20260907 13:30:34.944"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${ACCORDIAN_HEADING_SECTION_2}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:30:34.968" endtime="20260907 13:30:35.880"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:30:35.881" endtime="20260907 13:30:39.762"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:30:39.763" endtime="20260907 13:30:39.839"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:30:39.840" level="INFO">Clicking element 'xpath=//*[contains(text(), 'Where does it come from')]'.</msg>
+<msg timestamp="20260907 13:30:41.343" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-97.png"&gt;&lt;img src="selenium-screenshot-97.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260907 13:30:41.347" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" aria-expanded="false" class="accordion-button collapsed"&gt;...&lt;/button&gt; is not clickable at point (580, 510). Other element would receive the click: &lt;span&gt;...&lt;/span&gt;
+  (Session info: chrome=152.0.7977.82); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff79322e035+5745]
+	chromedriver!(No symbol) [0x7ff793156a90]
+	chromedriver!(No symbol) [0x7ff792f85d7d]
+	chromedriver!(No symbol) [0x7ff792fe87e3]
+	chromedriver!(No symbol) [0x7ff792fe6413]
+	chromedriver!(No symbol) [0x7ff792fe3767]
+	chromedriver!(No symbol) [0x7ff792fe2630]
+	chromedriver!(No symbol) [0x7ff792fd4d88]
+	chromedriver!(No symbol) [0x7ff7930095ca]
+	chromedriver!(No symbol) [0x7ff792fd4606]
+	chromedriver!(No symbol) [0x7ff79302e502]
+	chromedriver!(No symbol) [0x7ff792fd2e4b]
+	chromedriver!(No symbol) [0x7ff792fd3d83]
+	chromedriver!GetHandleVerifier [0x7ff793642f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff793670132+447842]
+	chromedriver!GetHandleVerifier [0x7ff793663e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff793323f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff79316419c]
+	chromedriver!(No symbol) [0x7ff79315fdd4]
+	chromedriver!(No symbol) [0x7ff79315ff64]
+	chromedriver!(No symbol) [0x7ff79314a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ff82f7eccb7+17]
+	ntdll!RtlUserThreadStart [0x7ff830eacaec+2c]
+</msg>
+<status status="FAIL" starttime="20260907 13:30:39.839" endtime="20260907 13:30:41.559"/>
+</kw>
+<status status="FAIL" starttime="20260907 13:30:34.955" endtime="20260907 13:30:41.561"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${ACCORDIAN_CONTENT_SECTION_2}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20260907 13:30:41.606" endtime="20260907 13:30:41.608"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${product}</arg>
+<arg>${ACCORDIAN_CONTENT_SECTION_2}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20260826 12:10:49.210" level="INFO">Element 'xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='Sauce Labs Backpack']' is displayed.</msg>
-<status status="PASS" starttime="20260826 12:10:49.194" endtime="20260826 12:10:49.211"/>
+<status status="NOT RUN" starttime="20260907 13:30:41.702" endtime="20260907 13:30:41.710"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:48.965" endtime="20260826 12:10:49.264"/>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:30:42.019" endtime="20260907 13:30:48.081"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:48.464" endtime="20260826 12:10:49.264"/>
+<status status="PASS" starttime="20260907 13:30:41.810" endtime="20260907 13:30:48.081"/>
+</kw>
+<doc>Click the second accordion heading and verify inner text expands.</doc>
+<status status="FAIL" starttime="20260907 13:30:23.213" endtime="20260907 13:30:48.082">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="button" aria-expanded="false" class="accordion-button collapsed"&gt;...&lt;/button&gt; is not clickable at point (580, 510). Other element would receive the click: &lt;span&gt;...&lt;/span&gt;
+  (Session info: chrome=152.0.7977.82); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff79322e035+5745]
+	chromedriver!(No symbol) [0x7ff793156a90]
+	chromedriver!(No symbol) [0x7ff792f85d7d]
+	chromedriver!(No symbol) [0x7ff792fe87e3]
+	chromedriver!(No symbol) [0x7ff792fe6413]
+	chromedriver!(No symbol) [0x7ff792fe3767]
+	chromedriver!(No symbol) [0x7ff792fe2630]
+	chromedriver!(No symbol) [0x7ff792fd4d88]
+	chromedriver!(No symbol) [0x7ff7930095ca]
+	chromedriver!(No symbol) [0x7ff792fd4606]
+	chromedriver!(No symbol) [0x7ff79302e502]
+	chromedriver!(No symbol) [0x7ff792fd2e4b]
+	chromedriver!(No symbol) [0x7ff792fd3d83]
+	chromedriver!GetHandleVerifier [0x7ff793642f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff793670132+447842]
+	chromedriver!GetHandleVerifier [0x7ff793663e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff793323f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff79316419c]
+	chromedriver!(No symbol) [0x7ff79315fdd4]
+	chromedriver!(No symbol) [0x7ff79315ff64]
+	chromedriver!(No symbol) [0x7ff79314a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ff82f7eccb7+17]
+	ntdll!RtlUserThreadStart [0x7ff830eacaec+2c]
+</status>
 </test>
-<test id="s1-s1-s1-s1-s1-s1-t9" name="Complete Checkout" line="57">
-<kw name="Checkout" library="cart_keywords">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${CHECKOUT_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:50.519" level="INFO">Clicking element 'xpath=//button[@id='checkout']'.</msg>
-<status status="PASS" starttime="20260826 12:10:50.516" endtime="20260826 12:10:50.983"/>
+<test id="s1-s1-s1-s1-s1-t14" name="Scenario 14: Verify Tab Switching" line="155">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:30:48.147" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:30:48.146" endtime="20260907 13:30:56.369"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:50.515" endtime="20260826 12:10:50.984"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:30:56.370" endtime="20260907 13:30:56.463"/>
 </kw>
-<kw name="Enter Checkout Details" library="checkout_keywords">
-<arg>${FIRST_NAME}</arg>
-<arg>${LAST_NAME}</arg>
-<arg>${POSTAL_CODE}</arg>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${FIRST_NAME_INPUT}</arg>
-<arg>${first_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:50.994" level="INFO">Typing text 'Harshitha' into text field 'xpath=//input[@id='first-name']'.</msg>
-<status status="PASS" starttime="20260826 12:10:50.992" endtime="20260826 12:10:51.301"/>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:30:56.463" endtime="20260907 13:30:56.481"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${LAST_NAME_INPUT}</arg>
-<arg>${last_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:51.303" level="INFO">Typing text 'Sappa' into text field 'xpath=//input[@id='last-name']'.</msg>
-<status status="PASS" starttime="20260826 12:10:51.301" endtime="20260826 12:10:51.429"/>
+<status status="PASS" starttime="20260907 13:30:48.143" endtime="20260907 13:30:56.481"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${POSTAL_CODE_INPUT}</arg>
-<arg>${postal_code}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:51.430" level="INFO">Typing text '530016' into text field 'xpath=//input[@id='postal-code']'.</msg>
-<status status="PASS" starttime="20260826 12:10:51.429" endtime="20260826 12:10:51.550"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/tabs</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:30:56.489" level="INFO">Opening url 'https://demoqa.com/tabs'</msg>
+<status status="PASS" starttime="20260907 13:30:56.483" endtime="20260907 13:30:57.464"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:50.985" endtime="20260826 12:10:51.550"/>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${TABS_TAB_ORIGIN}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:30:57.506" endtime="20260907 13:30:58.054"/>
 </kw>
-<kw name="Continue Checkout" library="checkout_keywords">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${CONTINUE_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:51.553" level="INFO">Clicking element 'xpath=//input[@id='continue']'.</msg>
-<status status="PASS" starttime="20260826 12:10:51.552" endtime="20260826 12:10:51.745"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:51.550" endtime="20260826 12:10:51.750"/>
-</kw>
-<kw name="Finish Order" library="checkout_keywords">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${FINISH_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:51.755" level="INFO">Clicking element 'xpath=//button[@id='finish']'.</msg>
-<status status="PASS" starttime="20260826 12:10:51.751" endtime="20260826 12:10:51.924"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:51.751" endtime="20260826 12:10:51.925"/>
-</kw>
-<kw name="Verify Order Completed" library="checkout_keywords">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SUCCESS_MESSAGE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20260826 12:10:51.940" endtime="20260826 12:10:51.994"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:51.939" endtime="20260826 12:10:51.994"/>
-</kw>
-<status status="PASS" starttime="20260826 12:10:49.904" endtime="20260826 12:10:51.995"/>
-</test>
-<test id="s1-s1-s1-s1-s1-s1-t10" name="Logout From Application" line="68">
-<kw name="Logout" library="products_keyword">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${MENU_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:52.139" level="INFO">Clicking element 'xpath=//button[@id='react-burger-menu-btn']'.</msg>
-<status status="PASS" starttime="20260826 12:10:52.138" endtime="20260826 12:10:52.907"/>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:30:58.054" endtime="20260907 13:30:59.178"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${LOGOUT_LINK}</arg>
+<arg>${locator}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20260826 12:10:52.907" endtime="20260826 12:10:56.976"/>
+<status status="PASS" starttime="20260907 13:30:59.179" endtime="20260907 13:30:59.514"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${LOGOUT_LINK}</arg>
+<arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20260826 12:10:56.977" level="INFO">Clicking element 'xpath=//a[@id='logout_sidebar_link']'.</msg>
-<status status="PASS" starttime="20260826 12:10:56.977" endtime="20260826 12:10:58.499"/>
+<msg timestamp="20260907 13:30:59.516" level="INFO">Clicking element 'xpath=//*[@id='demo-tab-origin']'.</msg>
+<status status="PASS" starttime="20260907 13:30:59.515" endtime="20260907 13:31:01.335"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:52.137" endtime="20260826 12:10:58.500"/>
+<status status="PASS" starttime="20260907 13:30:57.499" endtime="20260907 13:31:01.335"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:52.015" endtime="20260826 12:10:58.520"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TABS_PANEL_ACTIVE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:31:01.339" endtime="20260907 13:31:01.413"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${TABS_PANEL_ACTIVE}</arg>
+<arg>Origin</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260907 13:31:01.848" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-98.png"&gt;&lt;img src="selenium-screenshot-98.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260907 13:31:01.855" level="FAIL">Element 'xpath=//div[contains(@class, 'tab-pane') and contains(@class, 'active')]' should have contained text 'Origin' but its text was 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.'.</msg>
+<status status="FAIL" starttime="20260907 13:31:01.419" endtime="20260907 13:31:01.933"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:31:01.975" endtime="20260907 13:31:08.591"/>
+</kw>
+<status status="PASS" starttime="20260907 13:31:01.970" endtime="20260907 13:31:08.591"/>
+</kw>
+<doc>Click the Origin tab and verify the active tab panel updates.</doc>
+<status status="FAIL" starttime="20260907 13:30:48.134" endtime="20260907 13:31:08.592">Element 'xpath=//div[contains(@class, 'tab-pane') and contains(@class, 'active')]' should have contained text 'Origin' but its text was 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.'.</status>
 </test>
-<kw name="Close Application" library="common_keywords" type="TEARDOWN">
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20260826 12:10:58.652" endtime="20260826 12:11:06.672"/>
+<test id="s1-s1-s1-s1-s1-t15" name="Scenario 15: Verify Tool Tip Hover" line="161">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:31:08.660" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:31:08.654" endtime="20260907 13:31:12.152"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:58.648" endtime="20260826 12:11:06.674"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:31:12.153" endtime="20260907 13:31:16.661"/>
 </kw>
-<status status="PASS" starttime="20260826 12:10:20.728" endtime="20260826 12:11:06.674"/>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:31:16.668" endtime="20260907 13:31:16.848"/>
+</kw>
+<status status="PASS" starttime="20260907 13:31:08.649" endtime="20260907 13:31:16.848"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/tool-tips</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:31:16.876" level="INFO">Opening url 'https://demoqa.com/tool-tips'</msg>
+<status status="PASS" starttime="20260907 13:31:16.875" endtime="20260907 13:31:17.617"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TOOL_TIPS_BUTTON_HOVER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:31:17.627" endtime="20260907 13:31:17.927"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${TOOL_TIPS_BUTTON_HOVER}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20260907 13:31:17.935" level="INFO">Simulating Mouse Over on element 'xpath=//button[@id='toolTipButton']'.</msg>
+<status status="PASS" starttime="20260907 13:31:17.928" endtime="20260907 13:31:19.468"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TOOL_TIPS_POPUP_INNER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:31:19.469" endtime="20260907 13:31:19.580"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${TOOL_TIPS_POPUP_INNER}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260907 13:31:19.999" level="INFO">Element 'xpath=//div[@class='tooltip-inner']' is displayed.</msg>
+<status status="PASS" starttime="20260907 13:31:19.584" endtime="20260907 13:31:20.000"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:31:20.012" endtime="20260907 13:31:23.042"/>
+</kw>
+<status status="PASS" starttime="20260907 13:31:20.011" endtime="20260907 13:31:23.042"/>
+</kw>
+<doc>Hover over button and verify tooltip popup is visible.</doc>
+<status status="PASS" starttime="20260907 13:31:08.621" endtime="20260907 13:31:23.044"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t16" name="Scenario 16: Verify Multi-Level Menu Navigation" line="169">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:31:23.129" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:31:23.128" endtime="20260907 13:31:26.920"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:31:26.922" endtime="20260907 13:31:32.690"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:31:32.692" endtime="20260907 13:31:32.695"/>
+</kw>
+<status status="PASS" starttime="20260907 13:31:23.127" endtime="20260907 13:31:32.695"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/menu</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:31:32.700" level="INFO">Opening url 'https://demoqa.com/menu'</msg>
+<status status="PASS" starttime="20260907 13:31:32.700" endtime="20260907 13:31:33.350"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENU_ITEM_MAIN_2}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:31:33.351" endtime="20260907 13:31:33.419"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${MENU_ITEM_MAIN_2}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20260907 13:31:33.421" level="INFO">Simulating Mouse Over on element 'xpath=//a[text()='Main Item 2']'.</msg>
+<status status="PASS" starttime="20260907 13:31:33.419" endtime="20260907 13:31:42.084"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENU_ITEM_SUB_SUB_LIST}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:31:42.087" endtime="20260907 13:31:45.461"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${MENU_ITEM_SUB_SUB_LIST}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20260907 13:31:45.465" level="INFO">Simulating Mouse Over on element 'xpath=//a[text()='SUB SUB LIST »']'.</msg>
+<status status="PASS" starttime="20260907 13:31:45.463" endtime="20260907 13:31:52.089"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENU_ITEM_SUB_SUB_ITEM_1}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:31:52.090" endtime="20260907 13:31:52.134"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${MENU_ITEM_SUB_SUB_ITEM_1}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260907 13:31:52.158" level="INFO">Element 'xpath=//a[text()='Sub Sub Item 1']' is displayed.</msg>
+<status status="PASS" starttime="20260907 13:31:52.136" endtime="20260907 13:31:52.159"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:31:52.173" endtime="20260907 13:31:54.942"/>
+</kw>
+<status status="PASS" starttime="20260907 13:31:52.170" endtime="20260907 13:31:54.942"/>
+</kw>
+<doc>Hover over nested menus to reveal sub-items.</doc>
+<status status="PASS" starttime="20260907 13:31:23.083" endtime="20260907 13:31:54.943"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t17" name="Scenario 17: Verify Select Menu Dropdowns" line="179">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:31:54.981" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:31:54.978" endtime="20260907 13:32:03.302"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:32:03.302" endtime="20260907 13:32:03.750"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:32:03.771" endtime="20260907 13:32:03.942"/>
+</kw>
+<status status="PASS" starttime="20260907 13:31:54.978" endtime="20260907 13:32:03.942"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/select-menu</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:32:04.006" level="INFO">Opening url 'https://demoqa.com/select-menu'</msg>
+<status status="PASS" starttime="20260907 13:32:04.005" endtime="20260907 13:32:04.788"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SELECT_MENU_SELECT_OLD_STYLE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:32:04.805" endtime="20260907 13:32:06.366"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${SELECT_MENU_SELECT_OLD_STYLE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:32:06.369" endtime="20260907 13:32:13.358"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${SELECT_MENU_SELECT_OLD_STYLE}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20260907 13:32:13.364" level="INFO">Selecting options from selection list 'xpath=//select[@id='oldSelectMenu']' by value 1.</msg>
+<status status="PASS" starttime="20260907 13:32:13.360" endtime="20260907 13:32:13.485"/>
+</kw>
+<kw name="List Selection Should Be" library="SeleniumLibrary">
+<arg>${SELECT_MENU_SELECT_OLD_STYLE}</arg>
+<arg>Blue</arg>
+<doc>Verifies selection list ``locator`` has ``expected`` options selected.</doc>
+<msg timestamp="20260907 13:32:13.487" level="INFO">Verifying list 'xpath=//select[@id='oldSelectMenu']' has option [ Blue ] selected.</msg>
+<msg timestamp="20260907 13:32:13.515" level="INFO">Current page contains list 'xpath=//select[@id='oldSelectMenu']'.</msg>
+<status status="PASS" starttime="20260907 13:32:13.486" endtime="20260907 13:32:16.200"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:32:16.204" endtime="20260907 13:32:18.870"/>
+</kw>
+<status status="PASS" starttime="20260907 13:32:16.201" endtime="20260907 13:32:18.871"/>
+</kw>
+<doc>Select an option from the old-style standard dropdown menu.</doc>
+<status status="PASS" starttime="20260907 13:31:54.965" endtime="20260907 13:32:18.871"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t18" name="Scenario 18: Verify Selectable List Item" line="187">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:32:18.920" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:32:18.917" endtime="20260907 13:32:27.390"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:32:27.391" endtime="20260907 13:32:27.906"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:32:27.907" endtime="20260907 13:32:28.116"/>
+</kw>
+<status status="PASS" starttime="20260907 13:32:18.916" endtime="20260907 13:32:28.120"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/selectable</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:32:28.140" level="INFO">Opening url 'https://demoqa.com/selectable'</msg>
+<status status="PASS" starttime="20260907 13:32:28.139" endtime="20260907 13:32:28.949"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SELECTABLE_ITEM_FIRST}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:32:29.038" endtime="20260907 13:32:29.301"/>
+</kw>
+<kw name="Safe Native Click" library="demo_keywords">
+<arg>${SELECTABLE_ITEM_FIRST}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260907 13:32:29.305" endtime="20260907 13:32:29.314"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260907 13:32:29.315" endtime="20260907 13:32:29.766"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:32:29.766" endtime="20260907 13:32:29.794"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260907 13:32:29.800" level="INFO">Clicking element 'xpath=//ul[@id='verticalListContainer']/li[1]'.</msg>
+<status status="PASS" starttime="20260907 13:32:29.796" endtime="20260907 13:32:30.179"/>
+</kw>
+<status status="PASS" starttime="20260907 13:32:29.303" endtime="20260907 13:32:30.179"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SELECTABLE_ITEM_ACTIVE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:32:30.184" endtime="20260907 13:32:30.414"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${SELECTABLE_ITEM_ACTIVE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260907 13:32:30.427" level="INFO">Element 'xpath=//ul[@id='verticalListContainer']/li[contains(@class, 'active')]' is displayed.</msg>
+<status status="PASS" starttime="20260907 13:32:30.415" endtime="20260907 13:32:30.428"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:32:30.434" endtime="20260907 13:32:33.680"/>
+</kw>
+<status status="PASS" starttime="20260907 13:32:30.433" endtime="20260907 13:32:33.680"/>
+</kw>
+<doc>Click the first list item and verify active state.</doc>
+<status status="PASS" starttime="20260907 13:32:18.901" endtime="20260907 13:32:33.684"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t19" name="Scenario 19: Verify Drag and Drop Interaction" line="195">
+<kw name="Open DemoQA Application" library="demo_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260907 13:32:33.728" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com'.</msg>
+<status status="PASS" starttime="20260907 13:32:33.726" endtime="20260907 13:32:40.213"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260907 13:32:40.215" endtime="20260907 13:32:40.336"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260907 13:32:40.338" endtime="20260907 13:32:40.341"/>
+</kw>
+<status status="PASS" starttime="20260907 13:32:33.724" endtime="20260907 13:32:40.348"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}/droppable</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20260907 13:32:40.350" level="INFO">Opening url 'https://demoqa.com/droppable'</msg>
+<status status="PASS" starttime="20260907 13:32:40.349" endtime="20260907 13:32:41.249"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${DROPPABLE_ELEMENT_DRAG}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:32:41.349" endtime="20260907 13:32:41.806"/>
+</kw>
+<kw name="Drag And Drop" library="SeleniumLibrary">
+<arg>${DROPPABLE_ELEMENT_DRAG}</arg>
+<arg>${DROPPABLE_ELEMENT_DROP}</arg>
+<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
+<status status="PASS" starttime="20260907 13:32:41.807" endtime="20260907 13:32:42.972"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${DROPPABLE_TEXT_STATUS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260907 13:32:42.972" endtime="20260907 13:32:43.032"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${DROPPABLE_TEXT_STATUS}</arg>
+<arg>Dropped!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20260907 13:32:43.307" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-99.png"&gt;&lt;img src="selenium-screenshot-99.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260907 13:32:43.309" level="FAIL">Element 'xpath=//div[@id='simpleDropContainer']//div[@id='droppable']/p' should have contained text 'Dropped!' but its text was 'Drop Here'.</msg>
+<status status="FAIL" starttime="20260907 13:32:43.038" endtime="20260907 13:32:43.502"/>
+</kw>
+<kw name="Close DemoQA Application" library="demo_keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20260907 13:32:43.505" endtime="20260907 13:32:47.430"/>
+</kw>
+<status status="PASS" starttime="20260907 13:32:43.504" endtime="20260907 13:32:47.431"/>
+</kw>
+<doc>Drag element into droppable target and verify status change.</doc>
+<status status="FAIL" starttime="20260907 13:32:33.707" endtime="20260907 13:32:47.432">Element 'xpath=//div[@id='simpleDropContainer']//div[@id='droppable']/p' should have contained text 'Dropped!' but its text was 'Drop Here'.</status>
+</test>
+<status status="FAIL" starttime="20260907 13:26:06.773" endtime="20260907 13:32:47.533"/>
 </suite>
-<status status="PASS" starttime="20260826 12:10:20.718" endtime="20260826 12:11:06.816"/>
+<status status="FAIL" starttime="20260907 13:26:06.761" endtime="20260907 13:32:47.605"/>
 </suite>
-<status status="PASS" starttime="20260826 12:10:20.707" endtime="20260826 12:11:06.827"/>
+<status status="FAIL" starttime="20260907 13:26:06.752" endtime="20260907 13:32:47.622"/>
 </suite>
-<status status="PASS" starttime="20260826 12:10:20.700" endtime="20260826 12:11:06.837"/>
+<status status="FAIL" starttime="20260907 13:26:06.744" endtime="20260907 13:32:47.640"/>
 </suite>
-<status status="PASS" starttime="20260826 12:10:20.690" endtime="20260826 12:11:06.858"/>
-</suite>
-<status status="PASS" starttime="20260826 12:10:20.575" endtime="20260826 12:11:06.874"/>
+<status status="FAIL" starttime="20260907 13:26:06.614" endtime="20260907 13:32:47.662"/>
 </suite>
 <statistics>
 <total>
-<stat pass="10" fail="0" skip="0">All Tests</stat>
+<stat pass="13" fail="6" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="10" fail="0" skip="0" id="s1" name="Robot Files">Robot Files</stat>
-<stat pass="10" fail="0" skip="0" id="s1-s1" name="Results">Robot Files.Results</stat>
-<stat pass="10" fail="0" skip="0" id="s1-s1-s1" name="Saucedemo Automation">Robot Files.Results.Saucedemo Automation</stat>
-<stat pass="10" fail="0" skip="0" id="s1-s1-s1-s1" name="Resources">Robot Files.Results.Saucedemo Automation.Resources</stat>
-<stat pass="10" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="Test cases">Robot Files.Results.Saucedemo Automation.Resources.Test cases</stat>
-<stat pass="10" fail="0" skip="0" id="s1-s1-s1-s1-s1-s1" name="Saucedemo test">Robot Files.Results.Saucedemo Automation.Resources.Test cases.Saucedemo test</stat>
+<stat pass="13" fail="6" skip="0" id="s1" name="Robot Files">Robot Files</stat>
+<stat pass="13" fail="6" skip="0" id="s1-s1" name="DEMOQA AUTOMATION">Robot Files.DEMOQA AUTOMATION</stat>
+<stat pass="13" fail="6" skip="0" id="s1-s1-s1" name="Variables">Robot Files.DEMOQA AUTOMATION.Variables</stat>
+<stat pass="13" fail="6" skip="0" id="s1-s1-s1-s1" name="Testcases demoqa">Robot Files.DEMOQA AUTOMATION.Variables.Testcases demoqa</stat>
+<stat pass="13" fail="6" skip="0" id="s1-s1-s1-s1-s1" name="Demoqa Testcases">Robot Files.DEMOQA AUTOMATION.Variables.Testcases demoqa.Demoqa Testcases</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20260907 13:26:25.506" level="WARN">There was an error managing chromedriver (error decoding response body for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
 </errors>
 </robot>

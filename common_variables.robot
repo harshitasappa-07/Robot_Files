@@ -1,5 +1,7 @@
 *** Variables ***
-${URL}              https://www.saucedemo.com/
+${URL}              https://demoqa.com/
 ${BROWSER}              Chrome
+${TIMEOUT}              10s
 
 
+ 

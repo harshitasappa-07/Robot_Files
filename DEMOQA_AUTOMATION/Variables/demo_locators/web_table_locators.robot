@@ -1,0 +1,11 @@
+*** Variables ***
+${WEB_TABLE_BUTTON_ADD}                  xpath=//button[@id='addNewRecordButton']
+${WEB_TABLE_INPUT_SEARCH}                xpath=//input[@id='searchBox']
+${WEB_TABLE_INPUT_FIRST_NAME}            xpath=//input[@id='firstName']
+${WEB_TABLE_INPUT_LAST_NAME}             xpath=//input[@id='lastName']
+${WEB_TABLE_INPUT_EMAIL}                 xpath=//input[@id='userEmail']
+${WEB_TABLE_INPUT_AGE}                   xpath=//input[@id='age']
+${WEB_TABLE_INPUT_SALARY}                xpath=//input[@id='salary']
+${WEB_TABLE_INPUT_DEPARTMENT}            xpath=//input[@id='department']
+${WEB_TABLE_BUTTON_SUBMIT}               xpath=//button[@id='submit']
+${WEB_TABLE_ROWS}                        xpath=//div[@class='rt-tbody']//div[@role='row']

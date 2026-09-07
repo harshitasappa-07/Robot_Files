@@ -10,7 +10,8 @@ Verify Products Page
 Add Product To Cart
     [Arguments]    ${product_name}
     ${button}=    Set Variable
-    ...    xpath=//div[normalize-space()='${PRODUCT_NAME}']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]
+    ...    xpath=//div[normalize-space()='${product_name}']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart') or normalize-space()='Add to cart']
+    Wait Until Element Is Visible  ${button}   10s 
     Click Element    ${button}
 
 Open Cart
