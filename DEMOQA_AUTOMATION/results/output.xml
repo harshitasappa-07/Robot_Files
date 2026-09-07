@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20260826 12:10:20.561" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Files" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files">
+<suite id="s1-s1" name="Results" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results">
+<suite id="s1-s1-s1" name="Saucedemo Automation" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results\Saucedemo_Automation">
+<suite id="s1-s1-s1-s1" name="Resources" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results\Saucedemo_Automation\resources">
+<suite id="s1-s1-s1-s1-s1" name="Test cases" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results\Saucedemo_Automation\resources\Test cases">
+<suite id="s1-s1-s1-s1-s1-s1" name="Saucedemo test" source="C:\Users\Harshitha\OneDrive\All in one\Robot_Files\results\Saucedemo_Automation\resources\Test cases\Saucedemo_test.robot">
+<kw name="Open Application" library="common_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260826 12:10:21.354" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20260826 12:10:21.353" endtime="20260826 12:10:28.119"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260826 12:10:28.123" endtime="20260826 12:10:28.673"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10sec</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20260826 12:10:28.674" endtime="20260826 12:10:28.737"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:21.352" endtime="20260826 12:10:28.738"/>
+</kw>
+<test id="s1-s1-s1-s1-s1-s1-t1" name="Open SauceDemo" line="19">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Swag Labs</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20260826 12:10:29.218" level="INFO">Page title is 'Swag Labs'.</msg>
+<status status="PASS" starttime="20260826 12:10:29.176" endtime="20260826 12:10:29.218"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:28.738" endtime="20260826 12:10:29.229"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t2" name="Valid Login" line="23">
+<kw name="Login To Application" library="login_keywords">
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:29.502" level="INFO">Typing text 'standard_user' into text field 'xpath=//input[@id='user-name']'.</msg>
+<status status="PASS" starttime="20260826 12:10:29.488" endtime="20260826 12:10:31.426"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:31.516" level="INFO">Typing text 'secret_sauce' into text field 'xpath=//input[@id='password']'.</msg>
+<status status="PASS" starttime="20260826 12:10:31.475" endtime="20260826 12:10:33.190"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:33.258" level="INFO">Clicking element 'xpath=//input[@id='login-button']'.</msg>
+<status status="PASS" starttime="20260826 12:10:33.195" endtime="20260826 12:10:35.910"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:29.483" endtime="20260826 12:10:35.910"/>
+</kw>
+<kw name="Verify Login Successful" library="login_keywords">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260826 12:10:35.931" endtime="20260826 12:10:35.983"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:35.920" endtime="20260826 12:10:35.985"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:29.301" endtime="20260826 12:10:35.988"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t3" name="Verify Products" line="28">
+<kw name="Verify Products Page" library="products_keyword">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PRODUCTS_TITLE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260826 12:10:37.657" endtime="20260826 12:10:40.009"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:37.638" endtime="20260826 12:10:40.012"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:37.313" endtime="20260826 12:10:40.026"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t4" name="Add One Product" line="32">
+<kw name="Add Product To Cart" library="products_keyword">
+<arg>${PRODUCT_1}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${button}</var>
+<arg>xpath=//div[normalize-space()='${PRODUCT_NAME}']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260826 12:10:41.334" level="INFO">${button} = xpath=//div[normalize-space()='Sauce Labs Backpack']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</msg>
+<status status="PASS" starttime="20260826 12:10:41.326" endtime="20260826 12:10:41.337"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:41.343" level="INFO">Clicking element 'xpath=//div[normalize-space()='Sauce Labs Backpack']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]'.</msg>
+<status status="PASS" starttime="20260826 12:10:41.337" endtime="20260826 12:10:47.243"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:41.295" endtime="20260826 12:10:47.243"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:41.060" endtime="20260826 12:10:47.248"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t5" name="Add Multiple Products" line="36">
+<kw name="Add Product To Cart" library="products_keyword">
+<arg>${PRODUCT_2}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${button}</var>
+<arg>xpath=//div[normalize-space()='${PRODUCT_NAME}']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260826 12:10:47.352" level="INFO">${button} = xpath=//div[normalize-space()='Sauce Labs Bike Light']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</msg>
+<status status="PASS" starttime="20260826 12:10:47.348" endtime="20260826 12:10:47.353"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:47.361" level="INFO">Clicking element 'xpath=//div[normalize-space()='Sauce Labs Bike Light']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]'.</msg>
+<status status="PASS" starttime="20260826 12:10:47.354" endtime="20260826 12:10:47.451"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:47.338" endtime="20260826 12:10:47.453"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:47.296" endtime="20260826 12:10:47.454"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t6" name="Remove Product" line="40">
+<kw name="Open Cart" library="products_keyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:47.525" level="INFO">Clicking element 'xpath=//a[contains(@class,'shopping_cart_link')]'.</msg>
+<status status="PASS" starttime="20260826 12:10:47.523" endtime="20260826 12:10:47.873"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:47.519" endtime="20260826 12:10:47.873"/>
+</kw>
+<kw name="Verify Product In Cart" library="cart_keywords">
+<arg>${PRODUCT_1}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${product}</var>
+<arg>xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='${product_name}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260826 12:10:47.875" level="INFO">${product} = xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='Sauce Labs Backpack']</msg>
+<status status="PASS" starttime="20260826 12:10:47.875" endtime="20260826 12:10:47.877"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${product}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260826 12:10:47.877" endtime="20260826 12:10:47.946"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${product}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260826 12:10:47.963" level="INFO">Element 'xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='Sauce Labs Backpack']' is displayed.</msg>
+<status status="PASS" starttime="20260826 12:10:47.946" endtime="20260826 12:10:47.963"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:47.874" endtime="20260826 12:10:47.965"/>
+</kw>
+<kw name="Remove Product" library="cart_keywords">
+<arg>${PRODUCT_1}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${remove}</var>
+<arg>xpath=//div[contains(@class,'cart_item')][.//div[normalize-space()='${product_name}']]//button[contains(@id,'remove')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260826 12:10:47.967" level="INFO">${remove} = xpath=//div[contains(@class,'cart_item')][.//div[normalize-space()='Sauce Labs Backpack']]//button[contains(@id,'remove')]</msg>
+<status status="PASS" starttime="20260826 12:10:47.966" endtime="20260826 12:10:47.968"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${remove}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260826 12:10:47.968" endtime="20260826 12:10:48.002"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${remove}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:48.003" level="INFO">Clicking element 'xpath=//div[contains(@class,'cart_item')][.//div[normalize-space()='Sauce Labs Backpack']]//button[contains(@id,'remove')]'.</msg>
+<status status="PASS" starttime="20260826 12:10:48.002" endtime="20260826 12:10:48.135"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:47.965" endtime="20260826 12:10:48.135"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:47.471" endtime="20260826 12:10:48.136"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t7" name="Continue Shopping" line="46">
+<kw name="Continue Shopping" library="cart_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CONTINUE_SHOPPING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:48.181" level="INFO">Clicking element 'xpath=//button[@id='continue-shopping']'.</msg>
+<status status="PASS" starttime="20260826 12:10:48.179" endtime="20260826 12:10:48.355"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:48.176" endtime="20260826 12:10:48.355"/>
+</kw>
+<kw name="Verify Products Page" library="products_keyword">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PRODUCTS_TITLE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260826 12:10:48.358" endtime="20260826 12:10:48.407"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:48.356" endtime="20260826 12:10:48.409"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:48.155" endtime="20260826 12:10:48.410"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t8" name="Add Product For Checkout" line="51">
+<kw name="Add Product To Cart" library="products_keyword">
+<arg>${PRODUCT_1}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${button}</var>
+<arg>xpath=//div[normalize-space()='${PRODUCT_NAME}']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260826 12:10:48.514" level="INFO">${button} = xpath=//div[normalize-space()='Sauce Labs Backpack']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]</msg>
+<status status="PASS" starttime="20260826 12:10:48.513" endtime="20260826 12:10:48.514"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:48.515" level="INFO">Clicking element 'xpath=//div[normalize-space()='Sauce Labs Backpack']/ancestor::div[contains(@class,'inventory_item')]//button[contains(@id,'add-to-cart')]'.</msg>
+<status status="PASS" starttime="20260826 12:10:48.515" endtime="20260826 12:10:48.603"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:48.512" endtime="20260826 12:10:48.603"/>
+</kw>
+<kw name="Open Cart" library="products_keyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CART_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:48.610" level="INFO">Clicking element 'xpath=//a[contains(@class,'shopping_cart_link')]'.</msg>
+<status status="PASS" starttime="20260826 12:10:48.607" endtime="20260826 12:10:48.965"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:48.604" endtime="20260826 12:10:48.965"/>
+</kw>
+<kw name="Verify Product In Cart" library="cart_keywords">
+<arg>${PRODUCT_1}</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${product}</var>
+<arg>xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='${product_name}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20260826 12:10:48.967" level="INFO">${product} = xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='Sauce Labs Backpack']</msg>
+<status status="PASS" starttime="20260826 12:10:48.966" endtime="20260826 12:10:49.146"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${product}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260826 12:10:49.147" endtime="20260826 12:10:49.194"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${product}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20260826 12:10:49.210" level="INFO">Element 'xpath=//div[contains(@class,'cart_item')]//div[normalize-space()='Sauce Labs Backpack']' is displayed.</msg>
+<status status="PASS" starttime="20260826 12:10:49.194" endtime="20260826 12:10:49.211"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:48.965" endtime="20260826 12:10:49.264"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:48.464" endtime="20260826 12:10:49.264"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t9" name="Complete Checkout" line="57">
+<kw name="Checkout" library="cart_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:50.519" level="INFO">Clicking element 'xpath=//button[@id='checkout']'.</msg>
+<status status="PASS" starttime="20260826 12:10:50.516" endtime="20260826 12:10:50.983"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:50.515" endtime="20260826 12:10:50.984"/>
+</kw>
+<kw name="Enter Checkout Details" library="checkout_keywords">
+<arg>${FIRST_NAME}</arg>
+<arg>${LAST_NAME}</arg>
+<arg>${POSTAL_CODE}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRST_NAME_INPUT}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:50.994" level="INFO">Typing text 'Harshitha' into text field 'xpath=//input[@id='first-name']'.</msg>
+<status status="PASS" starttime="20260826 12:10:50.992" endtime="20260826 12:10:51.301"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LAST_NAME_INPUT}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:51.303" level="INFO">Typing text 'Sappa' into text field 'xpath=//input[@id='last-name']'.</msg>
+<status status="PASS" starttime="20260826 12:10:51.301" endtime="20260826 12:10:51.429"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${POSTAL_CODE_INPUT}</arg>
+<arg>${postal_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:51.430" level="INFO">Typing text '530016' into text field 'xpath=//input[@id='postal-code']'.</msg>
+<status status="PASS" starttime="20260826 12:10:51.429" endtime="20260826 12:10:51.550"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:50.985" endtime="20260826 12:10:51.550"/>
+</kw>
+<kw name="Continue Checkout" library="checkout_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:51.553" level="INFO">Clicking element 'xpath=//input[@id='continue']'.</msg>
+<status status="PASS" starttime="20260826 12:10:51.552" endtime="20260826 12:10:51.745"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:51.550" endtime="20260826 12:10:51.750"/>
+</kw>
+<kw name="Finish Order" library="checkout_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FINISH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:51.755" level="INFO">Clicking element 'xpath=//button[@id='finish']'.</msg>
+<status status="PASS" starttime="20260826 12:10:51.751" endtime="20260826 12:10:51.924"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:51.751" endtime="20260826 12:10:51.925"/>
+</kw>
+<kw name="Verify Order Completed" library="checkout_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SUCCESS_MESSAGE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260826 12:10:51.940" endtime="20260826 12:10:51.994"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:51.939" endtime="20260826 12:10:51.994"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:49.904" endtime="20260826 12:10:51.995"/>
+</test>
+<test id="s1-s1-s1-s1-s1-s1-t10" name="Logout From Application" line="68">
+<kw name="Logout" library="products_keyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MENU_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:52.139" level="INFO">Clicking element 'xpath=//button[@id='react-burger-menu-btn']'.</msg>
+<status status="PASS" starttime="20260826 12:10:52.138" endtime="20260826 12:10:52.907"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260826 12:10:52.907" endtime="20260826 12:10:56.976"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGOUT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260826 12:10:56.977" level="INFO">Clicking element 'xpath=//a[@id='logout_sidebar_link']'.</msg>
+<status status="PASS" starttime="20260826 12:10:56.977" endtime="20260826 12:10:58.499"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:52.137" endtime="20260826 12:10:58.500"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:52.015" endtime="20260826 12:10:58.520"/>
+</test>
+<kw name="Close Application" library="common_keywords" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20260826 12:10:58.652" endtime="20260826 12:11:06.672"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:58.648" endtime="20260826 12:11:06.674"/>
+</kw>
+<status status="PASS" starttime="20260826 12:10:20.728" endtime="20260826 12:11:06.674"/>
+</suite>
+<status status="PASS" starttime="20260826 12:10:20.718" endtime="20260826 12:11:06.816"/>
+</suite>
+<status status="PASS" starttime="20260826 12:10:20.707" endtime="20260826 12:11:06.827"/>
+</suite>
+<status status="PASS" starttime="20260826 12:10:20.700" endtime="20260826 12:11:06.837"/>
+</suite>
+<status status="PASS" starttime="20260826 12:10:20.690" endtime="20260826 12:11:06.858"/>
+</suite>
+<status status="PASS" starttime="20260826 12:10:20.575" endtime="20260826 12:11:06.874"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="10" fail="0" skip="0" id="s1" name="Robot Files">Robot Files</stat>
+<stat pass="10" fail="0" skip="0" id="s1-s1" name="Results">Robot Files.Results</stat>
+<stat pass="10" fail="0" skip="0" id="s1-s1-s1" name="Saucedemo Automation">Robot Files.Results.Saucedemo Automation</stat>
+<stat pass="10" fail="0" skip="0" id="s1-s1-s1-s1" name="Resources">Robot Files.Results.Saucedemo Automation.Resources</stat>
+<stat pass="10" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="Test cases">Robot Files.Results.Saucedemo Automation.Resources.Test cases</stat>
+<stat pass="10" fail="0" skip="0" id="s1-s1-s1-s1-s1-s1" name="Saucedemo test">Robot Files.Results.Saucedemo Automation.Resources.Test cases.Saucedemo test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

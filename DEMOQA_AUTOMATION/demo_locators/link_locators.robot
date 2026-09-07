@@ -1,0 +1,11 @@
+*** Variables ***
+${LINKS_LINK_SIMPLE}                     xpath=//a[@id='simpleLink']
+${LINKS_LINK_DYNAMIC}                    xpath=//a[@id='dynamicLink']
+${LINKS_LINK_CREATED}                    xpath=//a[@id='created']
+${LINKS_LINK_NO_CONTENT}                 xpath=//a[@id='no-content']
+${LINKS_LINK_MOVED}                      xpath=//a[@id='moved']
+${LINKS_LINK_BAD_REQUEST}                xpath=//a[@id='bad-request']
+${LINKS_LINK_UNAUTHORIZED}               xpath=//a[@id='unauthorized']
+${LINKS_LINK_FORBIDDEN}                  xpath=//a[@id='forbidden']
+${LINKS_LINK_NOT_FOUND}                  xpath=//a[@id='invalid-url']
+${LINKS_TEXT_RESPONSE}                   xpath=//p[@id='linkResponse']
